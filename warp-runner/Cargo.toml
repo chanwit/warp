@@ -11,3 +11,9 @@ dirs = "1.0.4"
 winapi = "0.3.6"
 log = "0.4.5"
 simple_logger = "1.0.1"
+openssl-sys = "*"
+
+[features]
+# Force openssl-sys to staticly link in the openssl library. Necessary when
+# cross compiling to x86_64-unknown-linux-musl.
+vendored = ["openssl-sys/vendored"]

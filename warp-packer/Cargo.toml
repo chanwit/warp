@@ -11,3 +11,9 @@ tempdir = "0.3.7"
 flate2 = "1.0"
 tar = "0.4"
 lazy_static = "1.1.0"
+openssl-sys = "*"
+
+[features]
+# Force openssl-sys to staticly link in the openssl library. Necessary when
+# cross compiling to x86_64-unknown-linux-musl.
+vendored = ["openssl-sys/vendored"]
